@@ -14,20 +14,23 @@ public class Student {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="studentId")
-	private Integer studentId;
+	@Column(name="serial_No")
+	private Integer serialNo;
 	
-	@Column(name="studentname")
+	@Column(name="student_Id")
+	private Long studentId;
+	
+	@Column(name="student_Name")
 	private String studentName;
 	
-	@Column(name="fathername")
+	@Column(name="father_Name")
 	private String fatherName;
 	
-	@Column(name="mothername")
+	@Column(name="mother_Name")
 	private String motherName;
 	
 	@Column(name="gender")
-	private char gender;
+	private String gender;
 	
 	@Column(name="caste")
 	private String caste;
@@ -35,33 +38,55 @@ public class Student {
 	@Column(name="religion")
 	private String religion;
 	
-	@Column(name="qualification")
-	private String qualification;
+	@Column(name="address")
+	private String address;
 	
-	@Column(name="serialno")
-	private int serialNo;
-
+	@Column(name="qualification1")
+	private String qualification1;
+	
+	@Column(name="qualification2")
+	private String qualification2;
+	
+	@Column(name="qualification3")
+	private String qualification3;
+	
+	
 	public Student() {
+		super();
 	}
 
-	public Student(Integer studentId, String studentName, String fatherName, String motherName, char gender,
-			String caste, String religion, String qualification, int serialNo) {
+	public Student(Integer serialNo, Long studentId, String studentName, String fatherName, String motherName,
+			String gender, String caste, String religion, String address, String qualification1, String qualification2,
+			String qualification3) {
+		super();
+		this.serialNo = serialNo;
 		this.studentId = studentId;
 		this.studentName = studentName;
 		this.fatherName = fatherName;
 		this.motherName = motherName;
 		this.gender = gender;
-		this.caste=caste;
+		this.caste = caste;
 		this.religion = religion;
-		this.qualification = qualification;
+		this.address = address;
+		this.qualification1 = qualification1;
+		this.qualification2 = qualification2;
+		this.qualification3 = qualification3;
+	}
+
+	public Integer getSerialNo() {
+		return serialNo;
+	}
+
+	public void setSerialNo(Integer serialNo) {
 		this.serialNo = serialNo;
 	}
 
-	public Integer getStudentId() {
+
+	public Long getStudentId() {
 		return studentId;
 	}
 
-	public void setStudentId(Integer studentId) {
+	public void setStudentId(Long studentId) {
 		this.studentId = studentId;
 	}
 
@@ -89,11 +114,11 @@ public class Student {
 		this.motherName = motherName;
 	}
 
-	public char getGender() {
+	public String getGender() {
 		return gender;
 	}
 
-	public void setGender(char gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 
@@ -113,20 +138,37 @@ public class Student {
 		this.religion = religion;
 	}
 
-	public String getQualification() {
-		return qualification;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setQualification(String qualification) {
-		this.qualification = qualification;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
-	public int getSerialNo() {
-		return serialNo;
+	public String getQualification1() {
+		return qualification1;
 	}
 
-	public void setSerialNo(int serialNo) {
-		this.serialNo = serialNo;
+	public void setQualification1(String qualification1) {
+		this.qualification1 = qualification1;
+	}
+
+
+	public String getQualification2() {
+		return qualification2;
+	}
+
+	public void setQualification2(String qualification2) {
+		this.qualification2 = qualification2;
+	}
+
+	public String getQualification3() {
+		return qualification3;
+	}
+
+	public void setQualification3(String qualification3) {
+		this.qualification3 = qualification3;
 	}
 
 		
