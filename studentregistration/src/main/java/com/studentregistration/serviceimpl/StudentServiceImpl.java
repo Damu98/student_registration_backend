@@ -36,17 +36,19 @@ public class StudentServiceImpl implements StudentService{
             student.setStudentId(newStudentId);
 
             // Call the repository method to insert the student
-            studentRepository.insertStudent(student.getStudentId(), student.getStudentName(), student.getFatherName(),
-                    student.getMotherName(), student.getGender(), student.getCaste(), student.getReligion(),
-                    student.getAddress(), student.getQualification1(), student.getQualification2(),
-                    student.getQualification3());
+//            studentRepository.insertStudent(student.getStudentId(), student.getStudentName(), student.getFatherName(),
+//                    student.getMotherName(), student.getGender(), student.getCaste(), student.getReligion(),
+//                    student.getAddress(), student.getQualification1(), student.getQualification2(),
+//                    student.getQualification3());
 
+            Student newStudent= studentRepository.save(student);
             // Log the serial number
-            System.out.println("Serial No: " + student.getSerialNo());
+            System.out.println("Serial No: " + newStudent.getSerialNo());
+            System.out.println("fatner name :"+ newStudent.getFatherName());
 
             // Prepare response based on the status
             if (student.getStudentId() > 0) {
-                response.put("student", student);
+                response.put("student", newStudent);
                 response.put("scode", 1);
                 response.put("sdec", "User added successfully");
             } else {

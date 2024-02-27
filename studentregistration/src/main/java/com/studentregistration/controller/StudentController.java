@@ -1,6 +1,5 @@
 package com.studentregistration.controller;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,6 +28,7 @@ public class StudentController {
 	@PostMapping("/addStudent")
 	public ResponseEntity<?> addStudent(@RequestBody Student student){
 		
+		System.out.println("New inserted values :"+student.toString());
 		return studentService.addStudent(student);
 	}
 	

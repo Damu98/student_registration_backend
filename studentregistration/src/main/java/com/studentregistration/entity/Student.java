@@ -171,5 +171,13 @@ public class Student {
 		this.qualification3 = qualification3;
 	}
 
+	@Override
+	public String toString() {
+		return "Student [serialNo=" + serialNo + ", studentId=" + studentId + ", studentName=" + studentName
+				+ ", fatherName=" + fatherName + ", motherName=" + motherName + ", gender=" + gender + ", caste="
+				+ caste + ", religion=" + religion + ", address=" + address + ", qualification1=" + qualification1
+				+ ", qualification2=" + qualification2 + ", qualification3=" + qualification3 + "]";
+	}
+
 		
 }
