@@ -18,7 +18,6 @@ import com.studentregistration.service.StudentService;
 
 @Controller
 @CrossOrigin
-@RequestMapping("/students")
 public class StudentController {
 
 	
@@ -38,7 +37,7 @@ public class StudentController {
 		return studentService.getStudents();
 	}
 	
-	@DeleteMapping("/{studentId}")
+	@DeleteMapping("/deleteStudent/{studentId}")
     public ResponseEntity<?> deleteStudentById(@PathVariable Long studentId) {
         ResponseEntity<?> response;
         try {
